@@ -96,6 +96,11 @@ void install_zebra(void) {
     p_spawn(@"/bin/bash", @[@"-c", @"chmod 6755 /usr/libexec/zebra/supersling"]);
 }
 
+void install_afc2(void) {
+    chmod(bundle("afc2.deb").path.UTF8String, 0777);
+    p_spawn(@"/usr/bin/dpkg", @[@"-i", bundle("afc2.deb").path]);
+}
+
 void install_bootstrap(void) {
     status(@"[*] moving files\n");
     copyfile(bundle("tar").path.UTF8String, "/bin/tar", NULL, COPYFILE_ALL);
@@ -127,6 +132,9 @@ void install_bootstrap(void) {
     
     status(@"[*] installing zebra\n");
     install_zebra();
+    
+    status(@"[*] installing afc2\n");
+    install_afc2();
     
     status(@"[*] running uicache\n");
     p_spawn(@"/usr/bin/uicache", @[]);

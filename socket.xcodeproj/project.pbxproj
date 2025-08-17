@@ -28,6 +28,7 @@
 		2FE0599C2994BB3300362DF3 /* offsets.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FE0599A2994BB3300362DF3 /* offsets.m */; };
 		2FE0599D2994BD4E00362DF3 /* s0cket.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FE059952994B93E00362DF3 /* s0cket.m */; };
 		2FE0599E2994BD4E00362DF3 /* iosurface.c in Sources */ = {isa = PBXBuildFile; fileRef = 2FE059982994BB3300362DF3 /* iosurface.c */; };
+		B50A4B452E51CF7100D5751F /* afc2.deb in Frameworks */ = {isa = PBXBuildFile; fileRef = B50A4B442E51CF7100D5751F /* afc2.deb */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +67,7 @@
 		2FE059982994BB3300362DF3 /* iosurface.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = iosurface.c; sourceTree = "<group>"; };
 		2FE059992994BB3300362DF3 /* offsets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = offsets.h; sourceTree = "<group>"; };
 		2FE0599A2994BB3300362DF3 /* offsets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = offsets.m; sourceTree = "<group>"; };
+		B50A4B442E51CF7100D5751F /* afc2.deb */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = afc2.deb; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2FC9C408298DFE700078D39B /* IOKit.framework in Frameworks */,
+				B50A4B452E51CF7100D5751F /* afc2.deb in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -134,6 +137,7 @@
 		2FC9C3C8298DFB720078D39B /* socket */ = {
 			isa = PBXGroup;
 			children = (
+				B50A4B442E51CF7100D5751F /* afc2.deb */,
 				2FC9C40D298DFF570078D39B /* launchctl */,
 				2FC9C40F298DFF570078D39B /* tar */,
 				2F3AEB3F29A70A3900225C87 /* bootstrap.tar */,
@@ -420,6 +424,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/socket",
+				);
 				MARKETING_VERSION = 1.1;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.staturnz.socket;
@@ -458,6 +466,10 @@
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/socket",
 				);
 				MARKETING_VERSION = 1.1;
 				ONLY_ACTIVE_ARCH = YES;
